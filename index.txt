@@ -1,0 +1,16 @@
+const toggleBtn =
+document.getElementById("toggleBtn");
+
+const sidebar =
+document.querySelector(".sidebar");
+
+const main =
+document.querySelector(".main-content");
+
+toggleBtn.addEventListener("click", ()=>{
+
+  sidebar.classList.toggle("hidden");
+
+  main.classList.toggle("full");
+
+});

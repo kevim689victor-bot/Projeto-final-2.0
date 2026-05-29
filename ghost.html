@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ghost of Tsushima</title>
+
+  <link rel="stylesheet" href="ghost.css">
+</head>
+<body>
+
+<!-- TRANSIÇÃO -->
+
+<div class="slash-transition" id="slash"></div>
+
+<!-- BOTÃO SIDEBAR -->
+
+<button class="toggle-btn" id="toggleBtn">
+☰
+</button>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <h2>Franquias</h2>
+
+    <a href="gta.html">GTA</a>
+    <a href="mario.html">Mario</a>
+    <a href="fnaf.html">FNAF</a>
+    <a href="resident.html">Resident Evil</a>
+    <a href="ghost.html" class="active">
+      Ghost Of Tsushima
+    </a>
+    <a href="cod.html">COD</a>
+    <a href="fantasy.html">Final Fantasy</a>
+    <a href="mine.html">Minecraft</a>
+    <a href="zelda.html">Zelda</a>
+    <a href="pokemon.html">Pokémon</a>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main-content">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <!-- VIDEO -->
+
+      <video autoplay muted loop id="bg-video">
+
+        <source
+        src="ghostbg.mp4"
+        type="video/mp4">
+
+      </video>
+
+      <!-- OVERLAY -->
+
+      <div class="overlay"></div>
+
+      <!-- FOLHAS -->
+
+      <div class="leaves">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+      <!-- ARTE -->
+
+      <img
+      src="imagens/ghost1.jpg"
+      class="hero-art">
+
+      <!-- PERSONAGEM -->
+
+      <img
+      src="imagens/Yotei-jin.png"
+      class="jin-img">
+
+      <!-- BOTÃO ESPADA -->
+
+      <button
+      class="theme-switch"
+      id="themeSwitch">
+
+      ⚔
+
+      </button>
+
+      <!-- TEXTO -->
+
+      <div class="hero-content">
+
+        <h1 id="gameTitle">
+          GHOST OF TSUSHIMA
+        </h1>
+
+        <p id="gameSub">
+          Honor Died On The Beach
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- HISTÓRIA -->
+
+    <section class="about hidden">
+
+      <div class="section-title">
+
+        <h2>História</h2>
+
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-card">
+
+          <h3>Jin Sakai</h3>
+
+          <p>
+            Último samurai do clã Sakai,
+            Jin abandona o código samurai
+            para salvar Tsushima.
+          </p>
+
+        </div>
+
+        <div class="about-card">
+
+          <h3>Invasão Mongol</h3>
+
+          <p>
+            A ilha de Tsushima é invadida
+            por Khotun Khan e o exército mongol.
+          </p>
+
+        </div>
+
+        <div class="about-card">
+
+          <h3>O Fantasma</h3>
+
+          <p>
+            Jin se transforma no Ghost,
+            usando medo e furtividade.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CHEFES -->
+
+    <section class="bosses hidden">
+
+      <div class="section-title">
+
+        <h2>Personagens</h2>
+
+      </div>
+
+      <div class="boss-grid">
+
+        <div class="boss-card">
+
+          <img src="imagens/jin-card.jpg">
+
+          <div class="boss-info">
+
+            <h3>Jin Sakai</h3>
+
+            <p>
+              O lendário Ghost.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="boss-card">
+
+          <img src="imagens/khan.jpg">
+
+          <div class="boss-info">
+
+            <h3>Khotun Khan</h3>
+
+            <p>
+              Líder da invasão mongol.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="boss-card">
+
+          <img src="imagens/yuna.jpg">
+
+          <div class="boss-info">
+
+            <h3>Yuna</h3>
+
+            <p>
+              Aliada de Jin na guerra.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- GALERIA -->
+
+    <section class="gallery hidden">
+
+      <div class="section-title">
+
+        <h2>Galeria</h2>
+
+      </div>
+
+      <div class="gallery-grid">
+
+        <img src="imagens/ghost1.jpg">
+        <img src="imagens/ghost2.jpg">
+        <img src="imagens/ghost3.jpg">
+        <img src="imagens/ghost4.jpg">
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="ghost.js"></script>
+
+</body>
+</html>

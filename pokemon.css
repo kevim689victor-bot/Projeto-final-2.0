@@ -1,0 +1,296 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  overflow-x:hidden;
+
+  font-family:Arial, sans-serif;
+
+  background:black;
+  color:white;
+}
+
+/* LAYOUT */
+
+.layout{
+  display:flex;
+  min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+  width:250px;
+
+  background:rgba(20,20,20,0.65);
+
+  backdrop-filter:blur(8px);
+
+  border-right:2px solid #ffd000;
+
+  padding:25px;
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  height:100vh;
+
+  z-index:100;
+}
+
+.sidebar h2{
+  color:#ffd000;
+
+  margin-bottom:25px;
+
+  font-size:2rem;
+}
+
+.sidebar a{
+  display:block;
+
+  color:white;
+  text-decoration:none;
+
+  padding:14px;
+
+  margin-bottom:10px;
+
+  border-radius:10px;
+
+  transition:.3s;
+}
+
+.sidebar a:hover{
+  background:rgba(255,208,0,0.20);
+
+  transform:translateX(8px);
+}
+
+/* BOTÃO ATIVO */
+
+.sidebar .active{
+  background:rgba(255,208,0,0.25);
+
+  border:1px solid #ffd000;
+
+  transform:translateX(8px);
+}
+
+/* MAIN */
+
+.main-content{
+  margin-left:250px;
+
+  width:calc(100% - 250px);
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+
+  height:100vh;
+
+  overflow:hidden;
+}
+
+/* VIDEO */
+
+#bg-video{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transform:scaleY(1.20);
+
+  z-index:-2;
+}
+
+/* OVERLAY ESCURO */
+
+.overlay{
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(0,0,0,0.35);
+
+  z-index:-1;
+}
+
+/* TEXTO */
+
+.content{
+  position:relative;
+
+  z-index:2;
+
+  text-align:center;
+
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.content h1{
+  font-size:5rem;
+
+  margin-bottom:20px;
+
+  text-shadow:0 0 15px rgba(255,255,255,0.8);
+}
+
+.content p{
+  font-size:1.5rem;
+
+  text-shadow:0 0 10px rgba(255,255,255,0.6);
+}
+
+/* PIKACHU */
+
+.pokemon-gif{
+  width:120px;
+
+  position:absolute;
+
+  top:20px;
+  left:20px;
+
+  z-index:3;
+}
+
+/* GENGAR */
+
+.gengar-gif{
+  width:120px;
+
+  position:absolute;
+
+  bottom:20px;
+  right:20px;
+
+  z-index:3;
+}
+
+/* GEN SECTION */
+
+.gen-section{
+  position:relative;
+
+  min-height:100vh;
+
+  padding:80px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+}
+
+/* KANTO */
+
+/* IMAGEM FUNDO GEN */
+
+.gen-bg{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  object-position:center 35%;
+
+  z-index:-2;
+}
+
+/* OVERLAY GEN */
+
+.gen-overlay{
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(0,0,0,0.60);
+}
+
+/* CONTEÚDO GEN */
+
+.gen-content{
+  position:relative;
+
+  z-index:2;
+
+  text-align:center;
+}
+
+.gen-content h2{
+  font-size:4rem;
+
+  color:#ffd000;
+
+  margin-bottom:20px;
+}
+
+.gen-content p{
+  font-size:1.3rem;
+
+  margin-bottom:40px;
+}
+
+/* CARDS */
+
+.game-cards{
+  display:flex;
+
+  gap:25px;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+}
+
+.game-card{
+  width:220px;
+
+  padding:30px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  border-radius:20px;
+
+  backdrop-filter:blur(6px);
+
+  transition:.3s;
+
+  cursor:pointer;
+}
+
+.game-card:hover{
+  transform:translateY(-10px);
+
+  background:rgba(255,208,0,0.15);
+}
+
+.game-card h3{
+  color:#ffd000;
+
+  margin-bottom:10px;
+}
+

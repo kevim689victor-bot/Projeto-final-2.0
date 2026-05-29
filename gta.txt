@@ -1,0 +1,148 @@
+const games = {
+
+gta1:{
+title:"GTA 1",
+year:"1997",
+dev:"DMA Design",
+plataformas:"PC, PlayStation",
+nota:"8.0/10",
+impacto:"Criou a base do gênero sandbox moderno.",
+curiosidade:"Originalmente teria foco policial.",
+desc:"Primeiro jogo da franquia, apresentou liberdade criminal inédita.",
+bg:"imagens/gta1.png"
+},
+
+gta2:{
+title:"GTA 2",
+year:"1999",
+dev:"DMA Design",
+plataformas:"PC, PlayStation",
+nota:"8.2/10",
+impacto:"Introduziu reputação entre gangues.",
+curiosidade:"Passa-se em uma cidade futurista.",
+desc:"Expandiu o conceito urbano e trouxe IA mais viva.",
+bg:"imagens/gta2.jpg"
+},
+
+gta3:{
+title:"GTA 3",
+year:"2001",
+dev:"Rockstar North",
+plataformas:"PS2, PC, Xbox",
+nota:"9.5/10",
+impacto:"Revolucionou o mundo aberto em 3D.",
+curiosidade:"Mudou a indústria inteira.",
+desc:"O marco definitivo da franquia.",
+bg:"imagens/gta3.png"
+},
+
+vice:{
+title:"Vice City",
+year:"2002",
+dev:"Rockstar North",
+plataformas:"PS2, PC, Xbox",
+nota:"9.6/10",
+impacto:"Popularizou ambientações retrô nos games.",
+curiosidade:"Inspirado em Scarface e Miami Vice.",
+desc:"A jornada criminal neon de Tommy Vercetti.",
+bg:"imagens/gtavc.jpg"
+},
+
+sa:{
+title:"San Andreas",
+year:"2004",
+dev:"Rockstar North",
+plataformas:"PS2, PC, Xbox",
+nota:"9.8/10",
+impacto:"Maior salto de conteúdo da franquia.",
+curiosidade:"Possui três cidades enormes.",
+desc:"CJ retorna para salvar sua família e dominar o estado.",
+bg:"imagens/gtasa.jpg"
+},
+
+iv:{
+title:"GTA IV",
+year:"2008",
+dev:"Rockstar North",
+plataformas:"PS3, Xbox 360, PC",
+nota:"9.7/10",
+impacto:"Levou física e narrativa ao próximo nível.",
+curiosidade:"Euphoria revolucionou animações.",
+desc:"A jornada sombria de Niko Bellic.",
+bg:"imagens/gta4.jpg"
+},
+
+v:{
+title:"GTA V",
+year:"2013",
+dev:"Rockstar North",
+plataformas:"PS3, PS4, PS5, Xbox, PC",
+nota:"10/10",
+impacto:"Maior sucesso comercial da história.",
+curiosidade:"Mais de 200 milhões vendidos.",
+desc:"Três protagonistas e um mundo colossal.",
+bg:"imagens/gta5.jpg"
+},
+
+vi:{
+title:"GTA VI",
+year:"2026",
+dev:"Rockstar Games",
+plataformas:"PS5, Xbox Series X/S",
+nota:"Aguardando",
+impacto:"Promete redefinir o gênero.",
+curiosidade:"Maior hype da indústria.",
+desc:"Retorno épico a Vice City.",
+bg:"imagens/gta6.webp"
+}
+
+};
+
+function showGame(game){
+
+const g = games[game];
+
+document.getElementById("gameTitle").innerHTML = g.title;
+
+document.getElementById("gameDesc").innerHTML = `
+<div class="wiki-grid">
+
+<div class="wiki-card">
+<h3>Ano</h3>
+<p>${g.year}</p>
+</div>
+
+<div class="wiki-card">
+<h3>Desenvolvedora</h3>
+<p>${g.dev}</p>
+</div>
+
+<div class="wiki-card">
+<h3>Plataformas</h3>
+<p>${g.plataformas}</p>
+</div>
+
+<div class="wiki-card">
+<h3>Nota</h3>
+<p>${g.nota}</p>
+</div>
+
+<div class="wiki-card">
+<h3>Impacto</h3>
+<p>${g.impacto}</p>
+</div>
+
+<div class="wiki-card">
+<h3>Curiosidade</h3>
+<p>${g.curiosidade}</p>
+</div>
+
+</div>
+
+<br>
+
+<p>${g.desc}</p>
+`;
+
+document.body.style.backgroundImage = `url('${g.bg}')`;
+}

@@ -1,0 +1,545 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:black;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* LAYOUT */
+
+.layout{
+  display:flex;
+}
+
+/* BOTÃO SIDEBAR */
+
+.toggle-btn{
+  position:fixed;
+
+  top:20px;
+  left:20px;
+
+  width:50px;
+  height:50px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:rgba(0,0,0,0.60);
+
+  color:white;
+
+  font-size:1.5rem;
+
+  cursor:pointer;
+
+  z-index:999;
+
+  backdrop-filter:blur(10px);
+
+  transition:.3s;
+}
+
+.toggle-btn:hover{
+  transform:scale(1.08);
+
+  background:rgba(255,255,255,0.10);
+}
+
+/* SIDEBAR */
+
+.sidebar{
+  width:250px;
+
+  background:rgba(20,20,20,0.75);
+
+  backdrop-filter:blur(10px);
+
+  border-right:1px solid rgba(255,255,255,0.12);
+
+  padding:25px;
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  height:100vh;
+
+  z-index:100;
+
+  transition:.5s;
+}
+
+.sidebar.hidden{
+  transform:translateX(-100%);
+}
+
+.sidebar h2{
+  margin-bottom:25px;
+
+  font-size:2rem;
+}
+
+.sidebar a{
+  display:block;
+
+  color:white;
+
+  text-decoration:none;
+
+  padding:14px;
+
+  margin-bottom:10px;
+
+  border-radius:12px;
+
+  transition:.3s;
+}
+
+.sidebar a:hover{
+  background:rgba(255,255,255,0.10);
+
+  transform:translateX(8px);
+}
+
+/* MAIN */
+
+.main-content{
+  margin-left:250px;
+
+  width:calc(100% - 250px);
+
+  transition:.5s;
+}
+
+.main-content.full{
+  margin-left:0;
+
+  width:100%;
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+
+  height:100vh;
+
+  overflow:hidden;
+}
+
+/* VIDEO */
+
+#bg-video{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  z-index:-2;
+}
+
+/* OVERLAY */
+
+.overlay{
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(0,0,0,0.55);
+
+  z-index:-1;
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+  position:relative;
+
+  z-index:2;
+
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  padding:40px;
+}
+
+.hero-content h1{
+  font-size:6rem;
+
+  margin-bottom:20px;
+
+  text-shadow:0 0 20px rgba(255,255,255,0.4);
+}
+
+.hero-content p{
+  font-size:1.4rem;
+
+  max-width:800px;
+
+  margin-bottom:40px;
+
+  color:#ddd;
+}
+
+/* BOTÕES */
+
+.hero-buttons{
+  display:flex;
+
+  gap:20px;
+}
+
+.hero-buttons a{
+  text-decoration:none;
+
+  color:white;
+
+  padding:16px 28px;
+
+  border-radius:14px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  backdrop-filter:blur(8px);
+
+  transition:.3s;
+}
+
+.hero-buttons a:hover{
+  transform:translateY(-6px);
+
+  background:rgba(255,255,255,0.15);
+}
+
+/* FEATURED */
+
+.featured{
+  padding:100px 60px;
+
+  background:#0b0b0b;
+}
+
+.featured h2{
+  font-size:3rem;
+
+  margin-bottom:50px;
+}
+
+/* GRID */
+
+.featured-grid{
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:35px;
+}
+
+/* CARD */
+
+.featured-card{
+  position:relative;
+
+  height:320px;
+
+  border-radius:26px;
+
+  overflow:hidden;
+
+  text-decoration:none;
+
+  display:flex;
+  align-items:end;
+
+  padding:35px;
+
+  transition:.5s;
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+  0 0 20px rgba(0,0,0,0.4);
+}
+
+/* BORDA PREMIUM */
+
+.featured-card::before{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:26px;
+
+  padding:1px;
+
+  background:linear-gradient(
+  135deg,
+  rgba(255,255,255,0.25),
+  transparent,
+  rgba(255,255,255,0.10));
+
+  -webkit-mask:
+  linear-gradient(#fff 0 0) content-box,
+  linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite:xor;
+
+  pointer-events:none;
+
+  z-index:10;
+}
+
+/* FUNDO */
+
+.card-bg{
+  position:absolute;
+
+  inset:0;
+
+  background-size:cover;
+  background-position:center;
+
+  transition:
+  transform .8s ease,
+  filter .8s ease;
+}
+
+/* OVERLAY */
+
+.card-bg::after{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:linear-gradient(
+  to top,
+  rgba(0,0,0,.90),
+  rgba(0,0,0,.20));
+}
+
+/* GALERIA */
+
+.hover-gallery{
+  position:absolute;
+
+  inset:0;
+
+  z-index:2;
+
+  overflow:hidden;
+
+  pointer-events:none;
+}
+
+/* IMAGENS */
+
+.hover-img{
+  position:absolute;
+
+  bottom:0;
+
+  left: -1px;px;
+
+  width:110%;
+
+  height:115%;
+
+  object-fit:cover;
+
+  opacity:0;
+
+  transition:
+  opacity 1s ease,
+  transform 1s ease,
+  left 1s ease;
+}
+
+/* HOVER */
+
+.featured-card:hover .hover-img{
+  left:0;
+}
+
+/* TROCA LENTA */
+
+.featured-card:hover .hover-img:nth-child(1){
+  animation:show1 9s infinite;
+}
+
+.featured-card:hover .hover-img:nth-child(2){
+  animation:show2 9s infinite;
+}
+
+.featured-card:hover .hover-img:nth-child(3){
+  animation:show3 9s infinite;
+}
+
+/* KEYFRAMES */
+
+@keyframes show1{
+
+  0%{
+    opacity:1;
+    transform:scale(1);
+  }
+
+  28%{
+    opacity:1;
+  }
+
+  33%{
+    opacity:0;
+  }
+
+  100%{
+    opacity:0;
+  }
+
+}
+
+@keyframes show2{
+
+  0%{
+    opacity:0;
+  }
+
+  33%{
+    opacity:1;
+    transform:scale(1);
+  }
+
+  61%{
+    opacity:1;
+  }
+
+  66%{
+    opacity:0;
+  }
+
+  100%{
+    opacity:0;
+  }
+
+}
+
+@keyframes show3{
+
+  0%{
+    opacity:0;
+  }
+
+  66%{
+    opacity:1;
+    transform:scale(1);
+  }
+
+  95%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+  }
+
+}
+
+/* TEXTO */
+
+.card-content{
+  position:relative;
+
+  z-index:3;
+}
+
+.card-content h3{
+  font-size:2.8rem;
+
+  color:white;
+
+  text-shadow:0 0 15px rgba(0,0,0,.7);
+}
+
+/* HOVER CARD */
+
+.featured-card:hover{
+  transform:
+  translateY(-12px)
+  scale(1.02);
+}
+
+/* FUNDO MEXE */
+
+.featured-card:hover .card-bg{
+  transform:scale(1.12);
+
+  filter:brightness(1.1);
+}
+
+/* IMAGENS FUNDOS */
+
+.gta{
+  background-image:url("imagens/gtav.png");
+}
+
+.mario{
+  background-image:url("imagens/mariohome.jpg");
+}
+
+.fnaf{
+  background-image:url("imagens/fnafhome.jpg");
+}
+
+.re{
+  background-image:url("imagens/rehome.jpg");
+}
+
+.sekiro{
+  background-image:url("imagens/sekirohome.jpg");
+}
+
+.cod{
+  background-image:url("imagens/codhome.jpg");
+}
+
+.ff{
+  background-image:url("imagens/ffhome.jpg");
+}
+
+.minecraft{
+  background-image:url("imagens/minehome.jpg");
+}
+
+.zelda{
+  background-image:url("imagens/zeldahome.jpg");
+}
+
+.pokemon{
+  background-image:url("imagens/pokemonhome.jpg");
+}

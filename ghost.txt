@@ -1,0 +1,174 @@
+/* SIDEBAR */
+
+const toggleBtn =
+document.getElementById("toggleBtn");
+
+const sidebar =
+document.querySelector(".sidebar");
+
+const main =
+document.querySelector(".main-content");
+
+toggleBtn.addEventListener("click", ()=>{
+
+  sidebar.classList.toggle("hidden");
+
+  main.classList.toggle("full");
+
+});
+
+/* SCROLL */
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+  entries.forEach((entry)=>{
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add("show");
+
+    }
+
+  });
+
+});
+
+const hiddenElements =
+document.querySelectorAll(".hidden");
+
+hiddenElements.forEach((el)=>
+observer.observe(el));
+
+/* TRANSIÇÃO */
+
+const slash =
+document.getElementById("slash");
+
+const links =
+document.querySelectorAll("a[href]");
+
+links.forEach((link)=>{
+
+  link.addEventListener("click",(e)=>{
+
+    e.preventDefault();
+
+    const target =
+    link.getAttribute("href");
+
+    slash.classList.add("active");
+
+    setTimeout(()=>{
+
+      window.location.href = target;
+
+    },600);
+
+  });
+
+});
+
+/* TROCA DE TEMA */
+
+const themeSwitch =
+document.getElementById("themeSwitch");
+
+const title =
+document.getElementById("gameTitle");
+
+const sub =
+document.getElementById("gameSub");
+
+const heroArt =
+document.querySelector(".hero-art");
+
+const jin =
+document.querySelector(".jin-img");
+
+const bgVideo =
+document.getElementById("bg-video");
+
+const videoSource =
+bgVideo.querySelector("source");
+
+let yoteiMode = false;
+
+themeSwitch.addEventListener("click", ()=>{
+
+  slash.classList.add("active");
+
+  heroArt.style.opacity = "0";
+
+  jin.style.opacity = "0";
+
+  setTimeout(()=>{
+
+    yoteiMode = !yoteiMode;
+
+    if(yoteiMode){
+
+      title.textContent =
+      "GHOST OF YŌTEI";
+
+      sub.textContent =
+      "The New Ghost Rises";
+
+      heroArt.src =
+      "imagens/ghost2.png";
+
+      jin.src =
+      "imagens/ghost1";
+
+      videoSource.src =
+      "yoteibg.mp4";
+
+    }
+
+    else{
+
+      title.textContent =
+      "GHOST OF TSUSHIMA";
+
+      sub.textContent =
+      "Honor Died On The Beach";
+
+      heroArt.src =
+      "imagens/ghost-art.png";
+
+      jin.src =
+      "imagens/jin.png";
+
+      videoSource.src =
+      "ghostbg.mp4";
+
+    }
+
+    bgVideo.load();
+
+    setTimeout(()=>{
+
+      heroArt.style.opacity = "1";
+
+      jin.style.opacity = "1";
+
+    },100);
+
+  },350);
+
+});
+
+/* PARALLAX */
+
+document.addEventListener("mousemove",(e)=>{
+
+  const x =
+  (e.clientX / window.innerWidth - .5) * 20;
+
+  const y =
+  (e.clientY / window.innerHeight - .5) * 20;
+
+  jin.style.transform =
+  `translate(${x}px, ${y}px)`;
+
+});
